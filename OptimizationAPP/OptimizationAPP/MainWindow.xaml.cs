@@ -1,24 +1,47 @@
-﻿using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace OptimizationAPP
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnStart_Click(object sender, RoutedEventArgs e)
+        {
+            expProcess.IsExpanded = !expProcess.IsExpanded;
+        }
+
+        private void btnTemp_Click(object sender, RoutedEventArgs e)
+        {
+            expProcess.IsExpanded = !expProcess.IsExpanded;
+        }
+
+        private void btnDisk_Click(object sender, RoutedEventArgs e)
+        {
+            expProcess.IsExpanded = !expProcess.IsExpanded;
+        }
+
+        private void btnDeepTemp_Click(object sender, RoutedEventArgs e)
+        {
+            expProcess.IsExpanded = !expProcess.IsExpanded;
+        }
+
+        private void btnPrefetch_Click(object sender, RoutedEventArgs e)
+        {
+            expProcess.IsExpanded = !expProcess.IsExpanded;
+        }
+
+        private void btnEvent_Click(object sender, RoutedEventArgs e)
+        {
+            expProcess.IsExpanded = !expProcess.IsExpanded;
+        }
+
+        private void btnAdvDisk_CLick(object sender, RoutedEventArgs e)
+        {
+            expProcess.IsExpanded = !expProcess.IsExpanded;
         }
     }
 }
