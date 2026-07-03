@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OptimizationAPP"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" ResizeMode="CanMinimize">
+        Title="SYS_OPTIMIZER" Height="520" Width="860" ResizeMode="CanMinimize" Background="#0D0D0D">
       
     <Grid>
         <Grid.RowDefinitions>
@@ -13,23 +13,33 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="220"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        
-        <ScrollViewer Grid.Row="0" Grid.Column="0" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled">
-            <StackPanel Grid.Row="0" Grid.Column="0">
-                <Button x:Name="btnStart" Content="Home" FontSize="35" FontWeight="DemiBold" Height="80" Background="White" Click="btnStart_Click" />
-                <Button x:Name="btnTempFiles" Content="Temp Files" FontSize="20" Height="60" Background="White" Click="btnTemp_Click"/>
-                <Button x:Name="btnBasicDisk" Content="Basic Disk" FontSize="20" Height="60" Background="White" Click="btnDisk_Click"/>
-                <Button x:Name="btnNvidiaSettings" Content="Nvidia Settings" FontSize="20" Height="60" Background="White" Click="btnNvidia_Click"/>
-                <Button x:Name="btnDeepTempFiles" Content="More Temp Files" FontSize="20" Height="60" Background="White" ToolTipService.ShowOnDisabled="True" Click="btnDeepTemp_Click"/>
-                <Button x:Name="btnPrefetch" Content="Prefetch" FontSize="20" Height="60" Background="White" ToolTipService.ShowOnDisabled="True" Click="btnPrefetch_Click"/>
-                <Button x:Name="btnEventViewer" Content="Event Viewer" FontSize="20" Height="60" Background="White" ToolTipService.ShowOnDisabled="True" Click="btnEvent_Click"/>
-                <Button x:Name="btnAdvancedDisk" Content="Advanced Disk" FontSize="20" Height="60" Background="White" ToolTipService.ShowOnDisabled="True" Click="btnAdvDisk_Click"/>
-            </StackPanel>
-        </ScrollViewer>
 
-        <Frame Name="menuFrame" NavigationUIVisibility="Hidden" Grid.Row="0" Grid.Column="1"/>
+        <Border Grid.Column="0" Background="#0A0A0F" BorderBrush="#00A8A8" BorderThickness="0,0,1,0">
+            <DockPanel>
+                <Border DockPanel.Dock="Top" BorderBrush="#008080" BorderThickness="0,0,0,1" Padding="14,12">
+                    <TextBlock Text="// SYS_MODULES" FontSize="11" FontFamily="Courier New" Foreground="#00FFFF"/>
+                </Border>
+
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                    <StackPanel>
+                        <Button x:Name="btnStart" Content="> HOME" Style="{StaticResource BtnSidebar}" Height="60" Click="btnStart_Click" />
+                        <Button x:Name="btnTempFiles" Content="> TEMP_FILES" Style="{StaticResource BtnSidebar}" Height="44" Click="btnTemp_Click"/>
+                        <Button x:Name="btnBasicDisk" Content="> DISK" Style="{StaticResource BtnSidebar}" Height="44" Click="btnDisk_Click"/>
+                        <Button x:Name="btnNvidiaSettings" Content="> NVIDIA_SETTINGS" Style="{StaticResource BtnSidebar}" Height="44" Click="btnNvidia_Click"/>
+
+                        <Border BorderBrush="#800080" BorderThickness="0,1,0,0" Margin="10,4,10,4"/>
+                        <Button x:Name="btnDeepTempFiles" Content="> MORE_TEMP_FILES" Style="{StaticResource BtnSidebar}" Height="44" ToolTipService.ShowOnDisabled="True" Click="btnDeepTemp_Click"/>
+                        <Button x:Name="btnPrefetch" Content="> PREFETCH" Style="{StaticResource BtnSidebar}" Height="44" ToolTipService.ShowOnDisabled="True" Click="btnPrefetch_Click"/>
+                        <Button x:Name="btnEventViewer" Content="> EVENT_VIEWER" Style="{StaticResource BtnSidebar}" Height="44" ToolTipService.ShowOnDisabled="True" Click="btnEvent_Click"/>
+                        <Button x:Name="btnAdvancedDisk" Content="> ADVANCED_DISK" Style="{StaticResource BtnSidebar}" Height="44" ToolTipService.ShowOnDisabled="True" Click="btnAdvDisk_Click"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </DockPanel>
+        </Border>
+
+        <Frame Name="menuFrame" NavigationUIVisibility="Hidden" Grid.Column="1"/>
     </Grid>
 </Window>

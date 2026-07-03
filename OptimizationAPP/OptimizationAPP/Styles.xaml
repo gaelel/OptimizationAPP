@@ -1,0 +1,173 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="BackgroundBrush" Color="#0D0D0D"/>
+    <SolidColorBrush x:Key="SidebarBrush" Color="#0A0A0F"/>
+    <SolidColorBrush x:Key="CyanBrush" Color="#00FFFF"/>
+    <SolidColorBrush x:Key="DarkerCyanBrush" Color="#008080"/>
+    <SolidColorBrush x:Key="MagentaBrush" Color="#FF00FF"/>
+    <SolidColorBrush x:Key="DarkMagentaBrush" Color="#800080"/>
+    <SolidColorBrush x:Key="TextBrush" Color="#E0E0E0"/>
+    <SolidColorBrush x:Key="SecondaryTextBrush" Color="#9E9E9E"/>
+    <SolidColorBrush x:Key="BorderBrush" Color="#00A8A8"/>
+
+    <Style TargetType="Window">
+        <Setter Property="Background" Value="{StaticResource BackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
+    </Style>
+
+    <Style TargetType="Page">
+        <Setter Property="Background" Value="{StaticResource BackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
+        <Setter Property="FontFamily" Value="Rajfhani, Segoe UI"/>
+    </Style>
+
+    <Style TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
+        <Setter Property="FontFamily" Value="Rajfhani, Segoe UI"/>
+    </Style>
+
+    <Style x:Key="BtnSidebar" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource SecondaryTextBrush}"/>
+        <Setter Property="FontFamily" Value="Courier New"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="Padding" Value="14,10"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border" 
+                            Background="{TemplateBinding Background}" 
+                            BorderBrush="Transparent" 
+                            BorderThickness="2,0,0,0" 
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Left" 
+                                          VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource DarkerCyanBrush}"/>
+                            <Setter Property="Foreground" Value="{StaticResource CyanBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="False">
+                            <Setter Property="Foreground" Value="#333333"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="BtnSidebarSelected" TargetType="Button" BasedOn="{StaticResource BtnSidebar}">
+        <Setter Property="Background" Value="{StaticResource BorderBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource CyanBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border" 
+                            Background="{StaticResource BorderBrush}" 
+                            BorderBrush="{StaticResource CyanBrush}" 
+                            BorderThickness="2,0,0,0" 
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Left" 
+                                          VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="BtnPrimary" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource CyanBrush}"/>
+        <Setter Property="FontFamily" Value="Courier New"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource CyanBrush}"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Padding" Value="28,10"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border" 
+                            Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            Padding="{TemplateBinding Padding}">
+                        <Border.Clip>
+                            <PathGeometry>
+                                <PathFigure StartPoint="10,0" IsClosed="True">
+                                    <LineSegment Point="200,0" />
+                                    <LineSegment Point="200,36" />
+                                    <LineSegment Point="190,36" />
+                                    <LineSegment Point="0,36" />
+                                    <LineSegment Point="0,10" />
+                                </PathFigure>
+                            </PathGeometry>
+                        </Border.Clip>
+                        <ContentPresenter HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource BorderBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource DarkerCyanBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="BtnSecondary" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource MagentaBrush}"/>
+        <Setter Property="FontFamily" Value="Courier New"/>
+        <Setter Property="FontSize" Value="10"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource DarkMagentaBrush}"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Padding" Value="18,7"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border" 
+                            Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            Padding="{TemplateBinding Padding}">
+                        <Border.Clip>
+                            <PathGeometry>
+                                <PathFigure StartPoint="6,0" IsClosed="True">
+                                    <LineSegment Point="150,0" />
+                                    <LineSegment Point="150,30" />
+                                    <LineSegment Point="144,30" />
+                                    <LineSegment Point="0,30" />
+                                    <LineSegment Point="0,6" />
+                                </PathFigure>
+                            </PathGeometry>
+                        </Border.Clip>
+                        <ContentPresenter HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource DarkMagentaBrush}"/>
+                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource MagentaBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource DarkMagentaBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
