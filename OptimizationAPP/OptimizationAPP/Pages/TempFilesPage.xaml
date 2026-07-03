@@ -8,11 +8,20 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="TempFilesPage">
 
-    <ScrollViewer Grid.Row="0" Grid.Column="0" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled">
-        <StackPanel Margin="10">
-            <TextBlock Text="Temp Files" FontSize="25" FontWeight="DemiBold" Height="Auto"/>
-            <TextBlock Text="Descripción del módulo..." FontSize="15" FontWeight="DemiBold" Height="Auto"/>
-            <Button Content="Iniciar limpieza"/>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0"  Margin="10">
+            <TextBlock Text="Temp Files" FontSize="50" FontWeight="Bold" HorizontalAlignment="Center"/>
+            <TextBlock Text="Elimina los archivos temporales almacenados en %temp%. Estos archivos suelen ser residuos de instalaciones y programas que ya no son necesarios." 
+                           FontSize="20" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="0,15,0,0"/>
+            <Button x:Name="btnIniciar" Content="LIMPIAR" Width="150" Height="35" HorizontalAlignment="Center" Margin="0,20,0,0" Click="btnIniciar_Click"/>
+
         </StackPanel>
-    </ScrollViewer>
+        <Button x:Name="btnSiguiente" Content="SIGUIENTE" Grid.Row="1" Width="100" Height="35" HorizontalAlignment="Right" Margin="0,0,5,5" Click="btnSiguiente_Click"/>
+        <Button x:Name="btnAnterior" Content="ANTERIOR" Grid.Row="1" Width="100" Height="35" HorizontalAlignment="Left" Margin="5,0,0,5" Click="btnAnterior_Click"/>
+    </Grid>
 </Page>

@@ -1,26 +1,62 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Diagnostics;
 
 namespace OptimizationAPP.Pages
 {
-    /// <summary>
-    /// Interaction logic for EventVwrPage.xaml
-    /// </summary>
     public partial class EventVwrPage : Page
     {
+        private readonly string[] _registrosObjetivo = {"Application",
+                                                        "Security",
+                                                        "Setup",
+                                                        "System"};
+
         public EventVwrPage()
         {
             InitializeComponent();
+        }
+
+        private void btnIniciar_Click(object sender, RoutedEventArgs e)
+        {
+            var resumen = new System.Text.StringBuilder();
+            int registrosLimpiados = 0;
+            int registrosFallidos = 0;
+
+            foreach (string registro in _registrosObjetivo)
+            {
+                try
+                {
+                    using (var eventLog = new EventLog(registro))
+                    {
+                        eventLog.Clear();
+                        registrosLimpiados++;
+                        resumen.AppendLine($"Registro '{registro}' limpiado correctamente.");
+                    }
+                }
+                catch (Exception  ex)
+                {
+                    registrosFallidos++;
+                    resumen.AppendLine($"No se pudo limpiar el registro '{registro}': {ex.Message}");
+                }
+            }
+
+            resumen.AppendLine();
+            resumen.AppendLine($"Se limpiaron {registrosLimpiados} registro(s) de {_registrosObjetivo.Length} correctamente.");
+
+            if (registrosFallidos > 0) resumen.AppendLine($"{registrosFallidos} registro(s) no pudieron ser limpiados.");
+
+            MessageBox.Show(resumen.ToString(), "Limpieza de Registros Completada");
+        }
+
+        private void btnSiguiente_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AdvDiskPage());
+        }
+
+        private void btnAnterior_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
         }
     }
 }

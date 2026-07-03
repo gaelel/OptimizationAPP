@@ -1,26 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using OptimizationAPP.Utilitys;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace OptimizationAPP
+namespace OptimizationAPP.Pages
 {
-    /// <summary>
-    /// Interaction logic for NvidiaPage.xaml
-    /// </summary>
     public partial class NvidiaPage : Page
     {
         public NvidiaPage()
         {
             InitializeComponent();
+
+            if (!PermisosHelper.IsAdmin())
+            {
+                btnSiguiente.Content = "TERMINAR";
+            }
+        }
+
+        private void btnAnterior_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
+        private void btnSiguiente_Click(object sender, RoutedEventArgs e)
+        {
+            if (PermisosHelper.IsAdmin())
+            {
+                NavigationService.Navigate(new Pages.DeepTempPage());
+            }
+            else
+            {
+                Application.Current.Shutdown();
+            }
         }
     }
 }

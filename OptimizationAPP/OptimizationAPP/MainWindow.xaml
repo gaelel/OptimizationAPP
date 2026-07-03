@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OptimizationAPP"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" ResizeMode="CanMinimize">
       
     <Grid>
         <Grid.RowDefinitions>
@@ -13,20 +13,20 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="300"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         
         <ScrollViewer Grid.Row="0" Grid.Column="0" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled">
-            <StackPanel Grid.Row="0" Grid.Column="0" Margin="10">
-                <Button x:Name="btnStart" Content="Start" FontSize="25" FontWeight="DemiBold" Height="40" Background="White" Click="btnStart_Click" />
-                <Button x:Name="btnTempFiles" Content="Temp Files" FontSize="15" Height="40" Background="White" Click="btnTemp_Click"/>
-                <Button x:Name="btnBasicDisk" Content="Basic Disk" FontSize="15" Height="40" Background="White" Click="btnDisk_Click"/>
-                <Button x:Name="btnDeepTempFiles" Content="Deep Temp Files" FontSize="15" Height="40" Background="White" Click="btnDeepTemp_Click"/>
-                <Button x:Name="btnPrefetch" Content="Prefetch" FontSize="15" Height="40" Background="White" Click="btnPrefetch_Click"/>
-                <Button x:Name="btnEventViewer" Content="Event Viewer" FontSize="15" Height="40" Background="White" Click="btnEvent_Click"/>
-                <Button x:Name="btnAdvancedDisk" Content="Advanced Disk" FontSize="15" Height="40" Background="White" Click="btnAdvDisk_Click"/>
-                <Button x:Name="btnNvidiaSettings" Content="Nvidia Settings" FontSize="15" Height="40" Background="White" Click="btnNvidia_Click"/>
+            <StackPanel Grid.Row="0" Grid.Column="0">
+                <Button x:Name="btnStart" Content="Home" FontSize="35" FontWeight="DemiBold" Height="80" Background="White" Click="btnStart_Click" />
+                <Button x:Name="btnTempFiles" Content="Temp Files" FontSize="20" Height="60" Background="White" Click="btnTemp_Click"/>
+                <Button x:Name="btnBasicDisk" Content="Basic Disk" FontSize="20" Height="60" Background="White" Click="btnDisk_Click"/>
+                <Button x:Name="btnNvidiaSettings" Content="Nvidia Settings" FontSize="20" Height="60" Background="White" Click="btnNvidia_Click"/>
+                <Button x:Name="btnDeepTempFiles" Content="More Temp Files" FontSize="20" Height="60" Background="White" ToolTipService.ShowOnDisabled="True" Click="btnDeepTemp_Click"/>
+                <Button x:Name="btnPrefetch" Content="Prefetch" FontSize="20" Height="60" Background="White" ToolTipService.ShowOnDisabled="True" Click="btnPrefetch_Click"/>
+                <Button x:Name="btnEventViewer" Content="Event Viewer" FontSize="20" Height="60" Background="White" ToolTipService.ShowOnDisabled="True" Click="btnEvent_Click"/>
+                <Button x:Name="btnAdvancedDisk" Content="Advanced Disk" FontSize="20" Height="60" Background="White" ToolTipService.ShowOnDisabled="True" Click="btnAdvDisk_Click"/>
             </StackPanel>
         </ScrollViewer>
 
