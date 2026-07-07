@@ -24,8 +24,8 @@
         BorderThickness="0,0,1,1" Opacity="0.5"/>
 
         <StackPanel Grid.Row="0"  Margin="36,28,26,0">
-            <TextBlock Text="// MODULE_06" FontFamily="Courier New" FontSize="11" Foreground="{StaticResource MagentaBrush}" Margin="0,0,0,6"/>
-            <TextBlock Text="EVENT_VIEWER" FontFamily="Courier New" FontSize="30" FontWeight="Bold" Foreground="{StaticResource CyanBrush}" Margin="0,0,0,4"/>
+            <TextBlock x:Name="txtTag" Text="// MODULE_06" FontFamily="Courier New" FontSize="11" Foreground="{StaticResource MagentaBrush}" Margin="0,0,0,6"/>
+            <TextBlock x:Name="txtTitle" Text="EVENT_VIEWER" FontFamily="Courier New" FontSize="30" FontWeight="Bold" Foreground="{StaticResource CyanBrush}" Margin="0,0,0,4"/>
 
             <Rectangle Height="1" Margin="0,5,0,16">
                 <Rectangle.Fill>
@@ -37,7 +37,7 @@
                 </Rectangle.Fill>
             </Rectangle>
             
-            <TextBlock Text="Elimina los eventos pasados en el apartado Event Viewer. En realidad no ayuda mucho al rendimiento este apartado, solo ayuda a mantener limpios los eventos para si ocurre un problema poder encontrar los eventos mas rapidos" 
+            <TextBlock x:Name="txtDesc" Text="Elimina los eventos pasados en el apartado Event Viewer. En realidad no ayuda mucho al rendimiento este apartado, solo ayuda a mantener limpios los eventos para si ocurre un problema poder encontrar los eventos mas rapidos" 
                        FontSize="15" Foreground="#9E9E9E" TextWrapping="Wrap" LineHeight="22" Margin="0,0,0,28"/>
             <Button x:Name="btnIniciar" Content="[ LIMPIAR ]" Style="{StaticResource BtnPrimary}" Width="180" Height="38" HorizontalAlignment="Left" Click="btnIniciar_Click"/>
         </StackPanel>

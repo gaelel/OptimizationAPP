@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using OptimizationAPP.Utilitys;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
@@ -10,6 +11,17 @@ namespace OptimizationAPP.Pages
         public DeepTempPage()
         {
             InitializeComponent();
+            LoadTexts();
+        }
+
+        private void LoadTexts()
+        {
+            txtTag.Text = LanguageManager.Get("TagDeepTemp");
+            txtTitle.Text = LanguageManager.Get("TituloDeepTemp");
+            txtDesc.Text = LanguageManager.Get("DescDeepTemp");
+            btnIniciar.Content = LanguageManager.Get("BtnIniciar");
+            btnSiguiente.Content = LanguageManager.Get("BtnSiguiente");
+            btnAnterior.Content = LanguageManager.Get("BtnAnterior");
         }
 
         private void btnIniciar_Click(object sender, RoutedEventArgs e)

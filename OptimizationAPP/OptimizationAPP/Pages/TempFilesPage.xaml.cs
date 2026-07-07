@@ -1,6 +1,7 @@
 ﻿using System.Windows.Controls;
 using System.Windows;
 using System.IO;
+using OptimizationAPP.Utilitys;
 
 namespace OptimizationAPP
 {
@@ -9,6 +10,17 @@ namespace OptimizationAPP
         public TempFilesPage()
         {
             InitializeComponent();
+            LoadTexts();
+        }
+
+        private void LoadTexts()
+        {
+            txtTag.Text = LanguageManager.Get("TagTemp");
+            txtTitle.Text = LanguageManager.Get("TituloTemp");
+            txtDesc.Text = LanguageManager.Get("DescTemp");
+            btnIniciar.Content = LanguageManager.Get("BtnIniciar");
+            btnSiguiente.Content = LanguageManager.Get("BtnSiguiente");
+            btnAnterior.Content = LanguageManager.Get("BtnAnterior");
         }
 
         private void btnIniciar_Click(object sender, System.Windows.RoutedEventArgs e)

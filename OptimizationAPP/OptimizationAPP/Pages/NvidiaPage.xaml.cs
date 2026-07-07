@@ -10,11 +10,21 @@ namespace OptimizationAPP.Pages
         public NvidiaPage()
         {
             InitializeComponent();
+            LoadTexts();
 
             if (!PermisosHelper.IsAdmin())
             {
                 btnSiguiente.Content = "TERMINAR";
             }
+        }
+
+        private void LoadTexts()
+        {
+            txtTag.Text = LanguageManager.Get("TagNvidia");
+            txtTitle.Text = LanguageManager.Get("TituloNvidia");
+            txtDesc.Text = LanguageManager.Get("DescNvidia");
+            btnSiguiente.Content = LanguageManager.Get("BtnSiguiente");
+            btnAnterior.Content = LanguageManager.Get("BtnAnterior");
         }
 
         private void btnAnterior_Click(object sender, RoutedEventArgs e)

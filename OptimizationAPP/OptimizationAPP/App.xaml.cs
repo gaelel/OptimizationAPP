@@ -1,14 +1,23 @@
-﻿using System.Configuration;
-using System.Data;
+﻿using OptimizationAPP.Utilitys;
 using System.Windows;
 
 namespace OptimizationAPP
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
     public partial class App : Application
     {
-    }
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
 
+            if (LanguageManager.HasSavedLanguage())
+            {
+               LanguageManager.LoadSavedLanguage();
+                new MainWindow().Show();
+            }
+            else
+            {
+                new LanguageSelectorWindow().Show();
+            }
+        }
+    }
 }

@@ -85,7 +85,6 @@
         <Setter Property="Foreground" Value="{StaticResource CyanBrush}"/>
         <Setter Property="FontFamily" Value="Courier New"/>
         <Setter Property="FontSize" Value="12"/>
-        <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="BorderBrush" Value="{StaticResource CyanBrush}"/>
         <Setter Property="Cursor" Value="Hand"/>
@@ -129,11 +128,11 @@
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="{StaticResource MagentaBrush}"/>
         <Setter Property="FontFamily" Value="Courier New"/>
-        <Setter Property="FontSize" Value="10"/>
+        <Setter Property="FontSize" Value="12"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="BorderBrush" Value="{StaticResource DarkMagentaBrush}"/>
         <Setter Property="Cursor" Value="Hand"/>
-        <Setter Property="Padding" Value="18,7"/>
+        <Setter Property="Padding" Value="28,10"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -144,12 +143,12 @@
                             Padding="{TemplateBinding Padding}">
                         <Border.Clip>
                             <PathGeometry>
-                                <PathFigure StartPoint="6,0" IsClosed="True">
-                                    <LineSegment Point="150,0" />
-                                    <LineSegment Point="150,30" />
-                                    <LineSegment Point="144,30" />
-                                    <LineSegment Point="0,30" />
-                                    <LineSegment Point="0,6" />
+                                <PathFigure StartPoint="10,0" IsClosed="True">
+                                    <LineSegment Point="200,0" />
+                                    <LineSegment Point="200,36" />
+                                    <LineSegment Point="190,36" />
+                                    <LineSegment Point="0,36" />
+                                    <LineSegment Point="0,10" />
                                 </PathFigure>
                             </PathGeometry>
                         </Border.Clip>

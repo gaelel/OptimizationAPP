@@ -130,7 +130,24 @@
     <value>TERMINAR ▶</value>
   </data>
   <data name="DescHome" xml:space="preserve">
-    <value>SYS_OPTIMIZER es una herramienta de mantenimiento diseñado para liberar espacio en disco </value>
+    <value>SYS_OPTIMIZER es una herramienta de mantenimiento diseñado para liberar espacio 
+    y mantener el sistema limpio eliminando archivos innecesarios acumulados por Windows.
+
+    MÓDULOS DISPONIBLES:
+    Encontrarás 6 módulos de limpieza organizados por nivel de acceso. Los módulos básicos 
+    (Temp Files, Basic Disk) no requieren permisos especiales. Los módulos avanzados 
+    (Deep Temp, Prefetch, Event Log, Adv Disk) requieren ejecutar la app como Administrador.
+
+    ANTES DE INICIAR — RECOMENDACIONES:
+    &gt; Crea un punto de restauración del sistema antes de ejecutar cualquier módulo.
+        Panel de Control → Sistema → Protección del sistema → Crear.
+    &gt; Cierra todos los programas abiertos para evitar conflictos con archivos en uso.
+    &gt; No interrumpas el proceso una vez iniciado.
+
+    AVISO LEGAL:
+    El uso de esta herramienta es responsabilidad exclusiva del usuario. El desarrollador 
+    no se hace responsable por pérdida de datos, mal funcionamiento del sistema o cualquier 
+    daño derivado del uso de esta aplicación. Procede bajo tu propio criterio.</value>
   </data>
   <data name="TagHome" xml:space="preserve">
     <value>// MODULO_00</value>
@@ -142,6 +159,129 @@
     <value>INICIO</value>
   </data>
   <data name="TituloTemp" xml:space="preserve">
-    <value>TEMP_FILES</value>
+    <value>ARCHIVOS_TEMP</value>
+  </data>
+  <data name="DescTemp" xml:space="preserve">
+    <value>Elimina los archivos temporales del usuario almacenados en %TEMP%. 
+    Windows y las aplicaciones generan estos archivos durante su funcionamiento 
+    como caché de instalaciones, archivos de sesión y datos de trabajo temporal. 
+    Con el tiempo se acumulan y ocupan espacio innecesario.
+
+    RIESGO: BAJO
+    Los archivos en %TEMP% son descartables por diseño. Windows y las aplicaciones 
+    los regeneran automáticamente cuando los necesitan. Es posible que algunos archivos 
+    estén en uso por procesos activos — estos serán omitidos automáticamente.
+
+    RECOMENDACIÓN: Cierra todos los programas antes de ejecutar este módulo 
+    para maximizar los archivos que se pueden eliminar.</value>
+  </data>
+  <data name="TagDisk" xml:space="preserve">
+    <value>// MODULO_02</value>
+  </data>
+  <data name="TituloDisk" xml:space="preserve">
+    <value>DISCO</value>
+  </data>
+  <data name="DescDisk" xml:space="preserve">
+    <value>Realiza una limpieza básica del disco eliminando tres categorías de archivos residuales: 
+    papelera de reciclaje, caché de miniaturas de Windows Explorer y reportes de errores 
+    del sistema (WER) generados por aplicaciones que han fallado anteriormente.
+
+    RIESGO: BAJO
+    La papelera se vacía permanentemente — asegúrate de no necesitar recuperar nada antes 
+    de ejecutar. Las miniaturas se regeneran automáticamente la próxima vez que abres 
+    una carpeta con imágenes. Los reportes de error son logs de diagnóstico que Windows 
+    genera automáticamente y no afectan el funcionamiento del sistema.</value>
+  </data>
+  <data name="TagNvidia" xml:space="preserve">
+    <value>// MODULO_03</value>
+  </data>
+  <data name="TituloNvidia" xml:space="preserve">
+    <value>AJUSTES_NVIDIA</value>
+  </data>
+  <data name="DescNvidia" xml:space="preserve">
+    <value>Módulo reservado para configuraciones recomendadas del panel de control de NVIDIA: 
+    ajustes de rendimiento, gestión de energía y optimización para uso general o gaming.
+
+    ESTADO: EN DESARROLLO
+    Esta funcionalidad estará disponible en una próxima versión de SYS_OPTIMIZER. 
+    Navega al siguiente módulo para continuar con la optimización del sistema..</value>
+  </data>
+  <data name="TagDeepTemp" xml:space="preserve">
+    <value>// MODULO_04</value>
+  </data>
+  <data name="TituloDeepTemp" xml:space="preserve">
+    <value>MAS_ARCHIVOS_TEMP</value>
+  </data>
+  <data name="DescDeepTemp" xml:space="preserve">
+    <value>
+			Elimina los archivos temporales globales del sistema almacenados en C:\Windows\Temp. 
+    A diferencia de %TEMP% que pertenece al usuario actual, esta carpeta es compartida 
+    por Windows y todos los procesos del sistema para almacenar archivos de trabajo temporal.
+
+    RIESGO: BAJO — REQUIERE ADMINISTRADOR
+    Los archivos en esta carpeta son residuos de procesos del sistema que ya finalizaron. 
+    Windows los regenera cuando los necesita. Algunos archivos pueden estar en uso 
+    por servicios activos del sistema — estos serán omitidos automáticamente.
+		</value>
+  </data>
+  <data name="TagPrefetch" xml:space="preserve">
+    <value>// MODULO_05</value>
+  </data>
+  <data name="TituloPrefetch" xml:space="preserve">
+    <value>PREFETCH</value>
+  </data>
+  <data name="DescPrefetch" xml:space="preserve">
+    <value>
+			Elimina los archivos .pf almacenados en C:\Windows\Prefetch. Windows genera estos 
+    archivos para acelerar la carga de programas frecuentes, almacenando un mapa de 
+    qué recursos necesita cada aplicación al iniciarse.
+
+    RIESGO: BAJO — REQUIERE ADMINISTRADOR
+    Eliminar los archivos de Prefetch no daña el sistema ni las aplicaciones. 
+    El único efecto visible es que los programas pueden tardar ligeramente más 
+    en abrirse la primera vez después de la limpieza, mientras Windows 
+    regenera los archivos de Prefetch automáticamente con el uso normal.
+		</value>
+  </data>
+  <data name="TagEvent" xml:space="preserve">
+    <value>// MODULO_06</value>
+  </data>
+  <data name="TituloEvent" xml:space="preserve">
+    <value>VISOR_DE_EVENTOS</value>
+  </data>
+  <data name="DescEvent" xml:space="preserve">
+    <value>
+			Limpia los registros de eventos de Windows: Application, Security, Setup y System. 
+    El Visor de Eventos almacena un historial de actividad del sistema, errores de 
+    aplicaciones y eventos de seguridad. Con el tiempo estos logs acumulan miles de 
+    entradas que ocupan espacio y dificultan encontrar eventos relevantes.
+
+    RIESGO: BAJO — REQUIERE ADMINISTRADOR
+    Limpiar los logs no afecta el funcionamiento del sistema. Su utilidad principal 
+    es de diagnóstico: si sospechas de un problema en tu sistema o planeas llamar 
+    a soporte técnico próximamente, considera posponer este módulo para preservar 
+    el historial de eventos reciente.
+		</value>
+  </data>
+  <data name="TagAdvDisk" xml:space="preserve">
+    <value>// MODULO_07</value>
+  </data>
+  <data name="TituloAdvDisk" xml:space="preserve">
+    <value>DISCO_AVANZADO</value>
+  </data>
+  <data name="DescAdvDisk" xml:space="preserve">
+    <value>
+			Limpieza avanzada del disco eliminando tres categorías de archivos de alto impacto: 
+    descargas residuales de Windows Update en SoftwareDistribution\Download, 
+    la carpeta Windows.old generada al actualizar de versión de Windows, 
+    y logs acumulados del sistema en C:\Windows\Logs.
+
+    RIESGO: MEDIO — REQUIERE ADMINISTRADOR
+    Windows.old puede liberar entre 10 y 20 GB pero su eliminación es permanente — 
+    ya no podrás revertir a la versión anterior de Windows una vez borrada. 
+    Las descargas de Windows Update eliminadas se volverán a descargar si el sistema 
+    necesita reinstalar alguna actualización. Se recomienda crear un punto de 
+    restauración antes de ejecutar este módulo.
+		</value>
   </data>
 </root>

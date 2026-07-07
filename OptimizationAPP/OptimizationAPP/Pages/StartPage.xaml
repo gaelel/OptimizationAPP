@@ -24,8 +24,8 @@
         BorderThickness="0,0,1,1" Opacity="0.5"/>
 
         <StackPanel Grid.Row="0"  Margin="36,28,36,0">
-            <TextBlock Text="// MODULE_00" FontFamily="Courier New" FontSize="11" Foreground="{StaticResource MagentaBrush}" Margin="0,0,0,6"/>
-            <TextBlock Text="OPTIMIZATION_RESOURCE" FontFamily="Courier New" FontSize="30" FontWeight="Bold" Foreground="{StaticResource CyanBrush}" Margin="0,0,0,4"/>
+            <TextBlock x:Name="txtTag" Text="// MODULE_00" FontFamily="Courier New" FontSize="11" Foreground="{StaticResource MagentaBrush}" Margin="0,0,0,6"/>
+            <TextBlock x:Name="txtTitulo" Text="OPTIMIZATION_RESOURCE" FontFamily="Courier New" FontSize="30" FontWeight="Bold" Foreground="{StaticResource CyanBrush}" Margin="0,0,0,4"/>
 
             <Rectangle Height="1" Margin="0,5,0,16">
                 <Rectangle.Fill>
@@ -37,7 +37,7 @@
                 </Rectangle.Fill>
             </Rectangle>
 
-            <TextBlock Text="Welcome to the Optimization App! This application is designed to help you optimize your system's performance by cleaning up temporary files, managing disk space, and providing access to advanced settings." 
+            <TextBlock x:Name="txtDescription" Text="Welcome to the Optimization App! This application is designed to help you optimize your system's performance by cleaning up temporary files, managing disk space, and providing access to advanced settings." 
                        FontSize="15" Foreground="#9E9E9E" TextWrapping="Wrap" LineHeight="22" Margin="0,0,0,28"/>
         </StackPanel>
         
