@@ -44,8 +44,26 @@
             <TextBlock Text="{DynamicResource DescTemp3}"
                FontSize="12" Foreground="#9E9E9E" TextWrapping="Wrap" Margin="0,0,0,16"/>
             <TextBlock Text="{DynamicResource DescTemp4}"
-               FontSize="12" Foreground="#9E9E9E" TextWrapping="Wrap" Margin="0,0,0,12"/>
+               FontSize="12" Foreground="#9E9E9E" TextWrapping="Wrap" Margin="0,0,0,24"/>
             <Button x:Name="btnIniciar" Content="{DynamicResource BtnLimpiar}" Style="{StaticResource BtnPrimary}" Width="180" Height="38" HorizontalAlignment="Left" Click="btnIniciar_Click"/>
+
+            <Grid Margin="0,20,0,0" Visibility="{Binding BarraVisibilidad}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock x:Name="txtProgreso" Grid.Row="0" FontFamily="Courier New" FontSize="11" Foreground="#00FFFF" Margin="0,0,0,6" Text=""/>
+
+                <Border x:Name="contenedorBarra" Grid.Row="1" Height="6" Background="#1A1A1A" BorderBrush="#008080" BorderThickness="1" CornerRadius="0">
+                    <Grid>
+                        <Rectangle x:Name="progressBar" Fill="#00FFFF" Width="0" HorizontalAlignment="Left" RadiusX="0" RadiusY="0"/>
+                    </Grid>
+                </Border>
+
+                <TextBlock x:Name="txtPorcentaje" Grid.Row="2" FontFamily="Courier New" FontSize="10" Foreground="#9E9E9E" Margin="0,4,0,0" Text=""/>
+            </Grid>
         </StackPanel>
 
         <Grid Grid.Row="1" Margin="36,0,36,20">
