@@ -25,6 +25,7 @@ namespace OptimizationAPP
         private void AbrirMainWindow()
         {
             var mainWindow = new MainWindow();
+            Application.Current.MainWindow = mainWindow;
             mainWindow.Show();
             this.Close();
         }

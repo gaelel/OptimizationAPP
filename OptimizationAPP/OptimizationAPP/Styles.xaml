@@ -245,4 +245,14 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style TargetType="ToolTip">
+        <Setter Property="Background" Value="{StaticResource SidebarBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource CyanBrush}"/>
+        <Setter Property="FontFamily" Value="Courier New"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="BorderBrush" Value="{StaticResource DarkerCyanBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="10,6"/>
+    </Style>
 </ResourceDictionary>
